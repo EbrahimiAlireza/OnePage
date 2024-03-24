@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     @font-face{
+      font-family: IRANSANS;
+       src: url("/IRANSansWeb.woff");
+      }
+*{
+  box-sizing: border-box;
+  font-family: IRANSans;
+}
+.acount{
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(45deg,#008080,#c0c0c0);
+  border-radius: .4rem;
+  color: #fff;
+  padding: .77rem 1rem ;
+}
+.acount-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.center{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  width: auto;
+  padding: .2rem .8rem;
+  border: 0;
+  outline: 0;
+  color: #333;
+}
+.btn-cancle{
+  background-color: #f77;
+  border-radius: 2px;
+}
+.btn-ok{
+  background-color: #009966;
+  border-radius: 2px;
+}
+.btn-btn{
+  border: 0;
+  background-color: #333;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  font-size: 16px;
+  transition: all .2s;
+}
+.btn-btn:hover{
+  background-color: #99ccff;
+}
+.btn-big-c{
+  border: 0;
+  background-color: #f77;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 16px;
+  transition: all .2s;
+}
+.btn-big-o{
+  border: 0;
+  background-color: #009966;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 16px;
+  transition: all .2s;
+}
+.btn-big{
+  width: 370px;
+  padding: .8rem 0;
+  margin-top: .4rem;
+}
+.userArea{
+  background-color: #6699;
+  padding: .1rem 1rem;
+  border-radius: .2rem;
+}
+.userArea > ul > li {
+  list-style: none;
+  display: inline;
+}
+.userArea > ul > li > a {
+  text-decoration: none;
+  padding: 0 .5rem;
+  font-weight: bold;
+}
+.d-none{
+  display: none !important;
+}
+.d-block{
+  display: block !important;
+}
+.text{
+  padding: .4rem;
+  text-align: center;
+  background-color: #cc99;
+  border-radius: .2rem;
+  box-shadow: 0 0 4px 0px #cc99;
+  border: 1px solid #fff;
+  line-height: 2rem;
+}
+.text1{
+  text-align: center;
+  font-size: 12px;
+}
+.txt,.lastpass{
+  text-align: center;
+  color: #fff;
+}
+.modal{
+  position: absolute;
+  background-color: #c0c0c0;
+  padding: .75rem 1rem;
+  border-radius: .4rem;
+  border: 1px solid  #009966;
+  left: 1rem;
+  right: 1rem;
+  top: 20px;
+  z-index: 1;
+  display: none;
+}
+.modal input{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: .5rem 1rem;
+  border-radius: .2rem;
+  margin: 1rem 0;
+}
+.body::after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: .5rem;
+}
+.passwordArea{
+  background: rgba(0,0,0,.98);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 2;
+}
+.inputAra{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+.inputAra input{
+  width: 80%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: #ffff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+.buttonArea{
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row-revers;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem 0;
+}
+.textarea{
+  width: 100%;
+  padding: .7rem 1rem;
+  margin: 0 auto;
+  outline: 0;
+  border-radius: .2rem;
+  border: 1px solid #333;
+}
+.textarea:focus{
+border: 1px solid #0919;
+}
+.input,.form input{
+  margin: .70rem 0;
+  width: 100%;
+  padding: .4rem 1rem;
+  outline: 0;
+  border: 1px solid #333;
+  border-radius: .2rem;
+}
+.form input:focus{
+  border: 1px solid #0919;
+}
+ul{
+  padding: 0;
+}
+.li{
+  list-style: none;
+  border: 1px solid   #c1c1c1;
+  padding: .2rem .5rem;
+  padding-bottom: 2rem;
+  margin: 1.2rem 0;
+  border-radius: .4rem;
+  border-top-right-radius: .7rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.mr-2{
+  margin-right: 1rem;
+}
+.ml-2{
+  margin-left: 1rem;
+}
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.border50{
+  border-radius: 50%;
+}
+.boxm{
+  margin: 1rem 0;
+  padding: .2rem .4rem;
+  display: none ;
+}
+.show >.boxm{
+  display: block;
+}
+.vidArea{
+  padding: .4rem;
+  margin-bottom: 1rem;
+}
+.display-result{
+  display: none;
+}
+.success{
+  color: #0919;
+  border: 1px solid #0919;
+  padding: .5rem 1rem ;
+  text-align: center;
+  display: block;
+}
+.danger{
+  color: #f65;
+  border: 1px solid #f65;
+  padding: .5rem 1rem ;
+  text-align: center;
+  display: block;
+}
+
+
+
+  </style>
+  <title>JsProject</title>
+</head>
+<body dir="rtl">
+<section class="passwordArea">
+  <section class="inputAra">
+    <p class="txt">رمز عبور خود را وارد کنید </p>
+    <p class="text">
+      رمز عبور 1234
+    </p>
+      <input type="password" class="input" disabled="true">
+      <p class="lastpass"></p>
+    </section>
+    <section class="area">
+  <section class="buttonArea">
+      
+      <button type="button" class="btn-btn" value="3">
+        3
+      </button>
+      <button type="button" class="btn-btn" value="2">
+        2
+      </button>
+      <button type="button" class="btn-btn" value="1">
+        1
+      </button>
+      
+    </section>
+  <section class="buttonArea">
+      
+      <button type="button" class="btn-btn" value="6">
+        6
+      </button>
+      <button type="button" class="btn-btn" value="5">
+        5
+      </button>
+      <button type="button" class="btn-btn" value="4">
+        4
+      </button>
+      
+    </section>
+  <section class="buttonArea">
+      
+      <button type="button" class="btn-btn" value="9">
+        9
+      </button>
+      <button type="button" class="btn-btn" value="8">
+        8
+      </button>
+      <button type="button" class="btn-btn" value="7">
+        7
+      </button>
+      
+    </section>
+  <section class="buttonArea">
+      
+      <button type="button" class="btn-btn" value="0">
+        0
+      </button>
+      <button type="button" class="btn btn-big-c" id="removepass">
+        ×
+      </button>
+      <button type="button" class="btn btn-big-o">
+       ●
+      </button>
+    </section>
+    </section>
+  </section>
+  <section class="modal">
+    <h5>نام و نام خانوادگی خود را وارد کنید .</h5>
+    <input type="text" id="input-modal" placeholder="نام ">
+    <button type="button" id="yes" class="btn btn-ok" onclick="setUserName()">
+      ثبت 
+    </button>
+    <button type="button" id="no" class="btn btn-cancle" onclick="hideModal()">
+      لغو 
+    </button>
+  </section>
+	<section class="show">
+	  <section class="acount">
+	    
+	   <section class="acount-header">
+	    <h3>حساب کاربری</h3>
+	     
+	    <button class="btn btn-cancle" type="button" onclick="rmoveCokie()">
+	      خروج از حساب کاربری
+	    </button>
+	   </section>
+	   <section class="center">
+	     
+	    <h3 id="user"></h3>
+	   </section>
+	    
+	  </section>
+	  <nav class="userArea">
+	    <ul>
+	      <li>
+	    <a onclick="showModal()">ورود</a>
+	      </li>
+	      <li>
+	    <a onclick="showModal()">ثبت نام </a>
+	      </li>
+	    </ul>
+	  </nav>
+	</section>
+  <script>
+    function showModal(){
+ let modal_box=document.querySelector(".modal");
+ let body=document.querySelector("body");
+  body.classList.add("body");
+  modal_box.classList.add("d-block");
+}
+function hideModal(){
+  let modal_box=document.querySelector(".modal");
+  let body=document.querySelector("body");
+  body.classList.remove("body");
+  modal_box.classList.remove("d-block");
+}
+function setUserName(){
+  let inputValue=document.querySelector("#input-modal").value;
+  localStorage.setItem("Name",inputValue)
+  window.location.reload();
+}
+function getUserName(){
+let getName=localStorage.getItem("Name");
+let acount=document.querySelector(".acount");
+let userArea=document.querySelector(".userArea");
+let user=document.querySelector("#user");
+
+if(getName==null || getName==""){
+   acount.classList.add("d-none");
+  }else{
+   acount.classList.add("d-block");
+    userArea.classList.add("d-none");
+    user.innerHTML=getName;
+ }
+}
+function rmoveCokie(){
+localStorage.removeItem("Name");
+window.location.reload()
+}
+window.addEventListener("load",(e)=>{
+  getUserName();
+  let btns=document.querySelectorAll(".btn-btn");
+  let input_pass=document.querySelector(".input");
+  let remove_pass=document.querySelector("#removepass");
+  var c=5;
+  btns.forEach((item)=>{
+    item.addEventListener("click",(e)=>{
+      input_pass.value+=e.target.value;
+      if(input_pass.value=="1234" && input_pass.value.length<=4){
+      let txt=document.querySelector(".passwordArea").classList.add("d-none");
+      }else if(input_pass.value.length==4){
+      let lastpass=document.querySelector(".lastpass");
+      lastpass.innerHTML="آخرین رمز عبور وارد شده "+input_pass.value;
+        input_pass.value="";
+        c--;
+      let txt=document.querySelector(".txt");
+      txt.style.color="#f77";
+      if(c<=1){
+        btns.forEach((btn)=>{
+          btn.disabled=true;
+        })
+        txt.innerHTML=" 30 ثانیه دیگر مجدد تلاش کنید  "
+        setTimeout(btnVisible,30000);
+     function btnVisible(){
+   let btns=document.querySelectorAll(".btn-btn");
+    btns.forEach((visible)=>{
+      let txt=document.querySelector(".txt");
+      txt.style.color="#fff";
+      c=5;
+      txt.innerHTML=" رمز عبور خود را وارد کنید  "
+      visible.disabled=false;
+    })
+  }
+      }else{
+      txt.innerHTML=c+" "+" فرصت دیگر دارید  "
+      }
+      }
+    })
+  })
+  remove_pass.addEventListener("click",(f)=>{
+    input_pass.value="";
+  })
+});
+  </script>
+</body>
+</html>
